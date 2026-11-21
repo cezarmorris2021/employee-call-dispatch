@@ -1,20 +1,19 @@
-# CallFlow Command v0.2
+# CallFlow Command — current status
 
-Standalone operations platform.
+## Not a live dispatch system
 
-## Owner/Admin controls
-- Business hours by day
-- Temporary closed override
-- Time zone
-- After-hours SMS message
-- Callback queue behavior
-- On-call forwarding number
-- Routing strategy: round-robin / fewest calls / longest idle
-- Ring duration and max attempts
-- Overflow rules
-- Employee duty status
-- Call and appointment metrics
-- Audit log
+This repository contains a simple example that selects an available employee from an in-memory list, plus written plans for a future API and database. It is not connected to live phone calls, text messages, appointments, or a shared database.
 
-## Production standard
-Frontend is a prototype. Production authority belongs server-side behind Auth/RBAC, PostgreSQL, signed telephony webhooks, audit logging, rate limits, encrypted secrets, backups, and atomic call assignment.
+The old web page displayed controls and a “Simulate Incoming Call” button, but its JavaScript did not connect those controls to working operations. The page has been changed to show the real status instead.
+
+Do not use this repository to route customer calls or store employee/customer information.
+
+## Still needed for live use
+
+- Secure sign-in and owner/employee permissions
+- A database that keeps records after restarts
+- A phone/text provider connection with verified call records
+- Server-side business hours and routing rules
+- Reliable audit history, backups, and alerts
+
+`API_SPEC.md` and `schema.sql` are design documents, not a running API or installed database. Follow `AGENTS.md` and explain progress in everyday language.
